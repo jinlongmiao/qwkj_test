@@ -17,8 +17,8 @@ public class LoginController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "login",method = RequestMethod.GET)
-    public String Login(UUser user, ModelAndView modelAndView){
+    @RequestMapping(value = "login",method = RequestMethod.POST)
+    public ModelAndView  Login(UUser user, ModelAndView modelAndView){
         LoggerUtils.debug(getClass(),"进来了");
         LoggerUtils.debug(getClass(),user.getEmail());
         LoggerUtils.debug(getClass(),user.getPswd());
@@ -26,6 +26,8 @@ public class LoginController {
         if(user1 == null) {
             LoggerUtils.debug(getClass(),"验证失败");
         }
-        return"index";
+        modelAndView.setViewName("index");
+        modelAndView.addObject("message","henhao");
+        return modelAndView;
    }
 }

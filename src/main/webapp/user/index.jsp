@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<p>登陆成功</p>
+<p>${message}</p>
 </body>
 </html>
