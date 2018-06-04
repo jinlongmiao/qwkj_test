@@ -19,6 +19,7 @@ public class LoginController {
 
     @RequestMapping(value = "login",method = RequestMethod.POST)
     public ModelAndView  Login(UUser user, ModelAndView modelAndView){
+        //使用logger工具
         LoggerUtils.debug(getClass(),"进来了");
         LoggerUtils.debug(getClass(),user.getEmail());
         LoggerUtils.debug(getClass(),user.getPswd());
